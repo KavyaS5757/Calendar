@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+.main {
+  width: 20rem;
+  padding: 0.7rem;
+  /* margin-left: 1rem; */
+  border: 1px solid blue;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  margin-bottom: 0.7rem;
+  justify-content: space-between;
   align-items: center;
+}
+.header button {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+.box {
+  height: 5rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  cursor: pointer;
+}
+.box.empty {
+  background-color: #e0e0e0;
+  cursor: default;
+}
+.box.selected {
+  background-color: blue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  display: flex;
+  height: 100vh;
 }
+
+.left-side {
+  flex: 1;
+  padding: 20px;
+  background-color: #f2f2f2;
+  overflow-y: hidden; /* Add this if you want a scroll bar when content overflows */
+}
+
+.right-side {
+  flex: 3;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto; /* Add this if you want a scroll bar when content overflows */
+}
+
+/* Optional: Add styling for calendar and events */
+.calendar {
+  /* Your calendar styling goes here */
+}
+
+.events {
+  /* Your events styling goes here */
+}
+
+.main {
+  width: 100%;
+  height: 100%; /* Set the height to 100% to fill the whole left side */
+  padding: 0.7rem;
+  box-sizing: border-box; /* Adjust box-sizing for accurate height calculation */
+  border: 1px solid blue;
+}
+
+.body {
+  height: calc(100% - 2rem); /* Adjust height calculation based on your needs */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+/* Rest of your existing styles... */
+
